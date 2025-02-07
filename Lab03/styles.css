@@ -1,0 +1,46 @@
+body {
+ 
+    margin: 0;
+    padding: 0;
+}
+.table2{
+    /* add vertical space between rows using spacing vaue of 20px */
+    border-spacing: 0 20px;
+    
+
+    
+}
+
+.box_text_color{
+    color: white;
+    padding: 10px;
+    margin: 0;
+
+}
+
+.box1{
+    background-color: darkred;
+text-align: center;
+}
+
+.box2{
+background-color: deeppink;
+text-align: center;
+}
+
+.box3{
+background-color: brown;
+text-align: center;
+}
+
+.td_image_width{
+    width: 570px;
+    height: 400px;
+
+}
+
+p {
+    font: 1em arial;
+    font-size: 16px;
+    color: #3d3d3d;
+}
