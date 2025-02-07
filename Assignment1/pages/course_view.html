@@ -1,0 +1,105 @@
+<!Doctype html> 
+<html>
+    <head>
+        <title>LMS - Course View</title>
+    </head>
+    <body>
+        <header>
+            <img src="images/logo.jpg" height="100" width="100">
+            <h1>LMS - Learning Management System </h1>
+            <h2>LMS - Course View</h2>
+        </header>
+        <div>
+            <a href="index.html">Homepage</a>
+
+        </div><br>
+        <main>
+            <label for="term">Select Term:</label>
+            <select id="term" name="term">
+                <option value="fall2025">Fall 2025</option>
+                <option value="winter2025" selected>Winter 2025</option>
+                <option value="spring2025">Spring 2025</option>
+                <option value="summer2025">Summer 2025</option>
+            </select>
+            <br>
+            <h2>Enrolled Courses</h2>
+            <hr>
+            <table>
+                <tr>
+                    <td>
+                        <img src="images/course1.jpg" width="250" height="200"><br><br>
+                        <label>Course Name: Web Development</label>
+                        <br><br>
+                        <label>Course Code: WD381</label>
+                        <br><br>
+                        <a href="attempt_quiz.html">Attempt Quiz</a>
+                    </td>
+                    <td>
+                        <img src="images/course1.jpg" width="250" height="200"><br><br>
+                        <label>Course Name: Data Structures</label>
+                        <br><br>
+                        <label>Course Code: DS371</label>
+                        <br><br>
+                        <a href="attempt_quiz.html">Attempt Quiz</a>
+                    </td>
+                    <td>
+                        <img src="images/course1.jpg" width="250" height="200"><br><br>
+                        <label>Course Name: DBMS</label>
+                        <br><br>
+                        <label>Course Code: DB346</label>
+                        <br><br>
+                        <a href="attempt_quiz.html">Attempt Quiz</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="images/course1.jpg" width="250" height="200"><br><br>
+                        <label>Course Name: Software Testing</label>
+                        <br><br>
+                        <label>Course Code: ST484</label>
+                        <br><br>
+                        <a href="attempt_quiz.html">Attempt Quiz</a>
+                    </td>
+                    <td>
+                        <img src="images/course1.jpg" width="250" height="200"><br><br>
+                        <label>Course Name: Software Architectures</label>
+                        <br><br>
+                        <label>Course Code: SA396</label>
+                        <br><br>
+                        <a href="attempt_quiz.html">Attempt Quiz</a>
+                    </td>
+                   
+                </tr>
+            </table>
+            <br>
+            <h2> Pending Invitations</h2>
+            <hr>
+            <table>
+            <tr>
+                <td>
+                    <img src="images/course2.jpg" width="250" height="200"><br><br>
+                    <label>Course Name: Data Science</label>
+                    <br><br>
+                    <label>Course Code: DS102</label>
+                    <br><br>
+                
+                    <button id="acceptBtn" style="background-color:lightgreen">Accept</button>
+                    <button id="declineBtn" style="background-color:tomato">Decline</button>
+                </td>
+                <td>
+                    <img src="images/course2.jpg" width="250" height="200"><br><br>
+                    <label>Course Name: Machine Learning</label>
+                    <br><br>
+                    <label>Course Code: ML105</label>
+                    <br><br>
+                    <button id="acceptBtn" style="background-color:lightgreen">Accept</button>
+                    <button id="declineBtn" style="background-color:tomato">Decline</button>
+                </td>
+               
+            </tr>
+        </table> <br>
+        </main>
+        <footer>&copy;2025 LMS.All rights reserved</footer>
+    </body>
+    </html>
+                
