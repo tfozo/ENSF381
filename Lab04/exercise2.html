@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Lab 4 - Exercise 2</title>
+  </head>
+  <body>
+    <h1>Simple Calculator</h1>
+    <script>
+      // step 1
+      //   function add(x, y) {
+      //     return x + y;
+      //   }
+      //   function subtract(x, y) {
+      //     return x - y;
+      //   }
+
+      // step 2
+      //   function add(x, y = 3) {
+      //     return x + y;
+      //   }
+      //   function subtract(x, y = 3) {
+      //     return x - y;
+      //   }
+      //   console.log(add(5));
+      //   console.log(subtract(5));
+
+      //step 3
+      let add = (x, y) => x + y;
+      let subtract = (x, y) => x - y;
+      let multiply = (x, y) => x * y;
+      let divide = (x, y) => x / y;
+      //   console.log(add(6, 2));
+      //   console.log(subtract(6, 2));
+      //   console.log(multiply(6, 2));
+      //   console.log(divide(6, 2));
+
+      //step 4
+      const Calculator = (a, b, callback) => callback(a, b);
+      console.log(Calculator(2, 3, add));
+      console.log(Calculator(2, 3, multiply));
+    </script>
+  </body>
+</html>

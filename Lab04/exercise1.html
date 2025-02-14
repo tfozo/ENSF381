@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Lab 4 - Exercise 1</title>
+  </head>
+  <body>
+    <h1>JavaScript Lab</h1>
+    <script>
+      let num1 = 1;
+      let num2 = 2;
+      const num3 = 3;
+      //   let num1 = 4;
+      //const num3 = 5;
+      console.log(num1);
+      console.log(num2);
+      console.log(num3);
+
+      string1 = "Hello, World!";
+      string2 = "JavaScript is fun!";
+      let str1len = string1.length;
+      console.log(str1len);
+      let string = string1 + " " + string2;
+      console.log(string);
+      let newstr = string2.replace("fun", "awesome");
+      console.log(newstr);
+
+      let name = "Alice";
+      let age = 25;
+      let strtemp = `My name is ${name} and I am ${age} years old `;
+      console.log(strtemp);
+
+
+
+      // create a variable to store the current date using javascript date object
+
+      const months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+      ];
+      const weekdays = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ];
+
+        let today = new Date();
+        let day = today.getDate();
+        let month = today.getMonth();
+        let year = today.getFullYear();
+        let weekday = today.getDay();
+        console.log(`Today is ${weekdays[weekday]}, ${months[month]} ${day}, ${year}`);
+        
+
+
+    </script>
+  </body>
+</html>
+
