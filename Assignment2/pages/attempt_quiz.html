@@ -1,0 +1,66 @@
+<!Doctype html> 
+<html lang="en">
+    <head>
+        <title>LMS - Quiz Attempt</title>
+    </head>
+    <body>
+        <header>
+            <img src="images/logo.jpg" height="100" width="100">
+            <h1>LMS - Learning Management System </h1>
+            <link rel="stylesheet" href="styles.css">
+        </header>
+        <!-- <h2>LMS - Attempt Quiz</h2> -->
+        <div>
+            <nav>
+            <a href="index.html">Homepage</a>
+            <a href="course_view.html">Courses</a>
+        </nav>
+        </div>
+        <br>
+        <br>
+        <main>
+            <img src="images/banner.jpg" id="banner" width="100%">
+            <section id="coursequiz">
+            <h2 id="coursename">Course Name: Web Development</h2>
+            <h2 id="coursecode">Course Code: WD381</h2>
+            <p>Topic: HTML Basics</p>
+            <p>Deadline: 11:59 PM, February 10, 2025</p>
+            <p>Attempts Allowed: 1</p>
+            </section>
+            <h3>Question 1</h3>
+            <p>What does HTML stand for?</p>
+            <form>
+                <section id="quizanswers">
+                <input type="radio" id="radiobtn" name="choice">
+                <label for="Hyper">Hyper Text Markup Language</label>
+                <br>
+                <input type="radio" id="radiobtn" name="choice">
+                <label for="Home Tool Markup Language">Home Tool Markup Language</label>
+                <br>
+            </section>
+            <br>
+                <input id="submit"  type="button" value="Submit Answer">
+            </form>
+            <h3>Question 2</h3>
+            <p>Which of the following are HTML elements? (Select all that apply)</p>
+            <form >
+                <section id="quizanswers">
+                <input type="checkbox" id="divSelect" name="div">
+                <label for="div">&lt;div&gt;</label>
+                <br>
+                <input type="checkbox" id="spanSelect" name="span">
+                <label for="span">&lt;span&gt;</label>
+                <br>
+                </section>
+                <br>
+                <input id="submit" type="submit"  value="Submit Answer">
+            </form>
+            <br>
+            <a href="leaderboard.html">
+                <button id="finish">Finish Quiz</button>
+            </a>
+        </main>
+        <br>
+        <footer>&copy;2025 LMS.All rights reserved</footer>
+    </body>
+    </html>
