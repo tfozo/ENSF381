@@ -71,7 +71,6 @@
                         <br><br>
                         <a href="attempt_quiz.html">Attempt Quiz</a>
                     </td>
-                   
                 </tr>
             </table>
             <br>
@@ -80,29 +79,89 @@
             <table>
             <tr>
                 <td class="course">
-                    <img id="pendImg"  src="images/course2.jpg" width="250"><br><br>
+                    <img src="images/course2.jpg" width="250"><br><br>
                     <label>Course Name: Data Science</label>
                     <br><br>
                     <label>Course Code: DS102</label>
                     <br><br>
-                
-                    <button id="acceptBtn" >Accept</button>
+                    <button id="acceptBtn">Accept</button>
                     <button id="declineBtn">Decline</button>
                 </td>
                 <td class="course">
-                    <img id="pendImg" src="images/course2.jpg" width="250"><br><br>
+                    <img src="images/course2.jpg" width="250"><br><br>
                     <label>Course Name: Machine Learning</label>
                     <br><br>
                     <label>Course Code: ML105</label>
                     <br><br>
-                    <button id="acceptBtn" >Accept</button>
-                    <button id="declineBtn" >Decline</button>
+                    <button id="acceptBtn">Accept</button>
+                    <button id="declineBtn">Decline</button>
                 </td>
-               
             </tr>
-        </table> <br>
+        </table>
+        <br>
         </main>
-        <footer>&copy;2025 LMS.All rights reserved</footer>
+      
+        <script>
+          
+            document.addEventListener('DOMContentLoaded', function () {
+            
+                var mainElement = document.getElementById('courseviewMainId');
+                var tables = mainElement.getElementsByTagName('table');
+                
+                if (tables.length >= 2) {
+                    var pendingTable = tables[1]; 
+                    var pendingCourses = pendingTable.querySelectorAll('td.course');
+                    
+                    pendingCourses.forEach(function (course) {
+                        // Because multiple elements share the same id
+                        // we use querySelector to get the first Accept and Decline buttons within each course tile.
+                        var acceptButton = course.querySelector('button#acceptBtn');
+                        var declineButton = course.querySelector('button#declineBtn');
+
+                        if (acceptButton) {
+                            acceptButton.addEventListener('click', function () {
+                                // Remove the Accept and Decline buttons from this tile.
+                                if (acceptButton.parentNode) {
+                                    acceptButton.parentNode.removeChild(acceptButton);
+                                }
+                                if (declineButton && declineButton.parentNode) {
+                                    declineButton.parentNode.removeChild(declineButton);
+                                }
+                                
+                                // Create and append the "Attempt Quiz" link.
+                                var quizLink = document.createElement('a');
+                                quizLink.href = "attempt_quiz.html";
+                                quizLink.textContent = "Attempt Quiz";
+                                course.appendChild(quizLink);
+                                
+                                // Move the course tile to the Enrolled Courses table.
+                                var enrolledTable = document.getElementById('coursesTable');
+                                var rows = enrolledTable.getElementsByTagName('tr');
+                                var lastRow = rows[rows.length - 1];
+                                
+                                // Limit each row to 3 courses.
+                                if (lastRow.children.length < 3) {
+                                    lastRow.appendChild(course);
+                                } else {
+                                    var newRow = document.createElement('tr');
+                                    newRow.appendChild(course);
+                                    enrolledTable.appendChild(newRow);
+                                }
+                            });
+                        }
+                        
+                        if (declineButton) {
+                            declineButton.addEventListener('click', function () {
+                                // Simply remove the course tile if declined.
+                                course.parentNode.removeChild(course);
+                            });
+                        }
+                    });
+                }
+            });
+        </script>
+        
+        <footer>&copy;2025 LMS. All rights reserved</footer>
     </body>
     </html>
                 

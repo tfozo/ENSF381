@@ -1,0 +1,132 @@
+<!Doctype html>
+<html lang="en">
+    <head>
+        <title>LMS - Quiz Attempt</title>
+    </head>
+    <body>
+        <header>
+            <img src="images/logo.jpg" height="100" width="100">
+            <h1>LMS - Learning Management System </h1>
+            <link rel="stylesheet" href="styles.css">
+        </header>
+        <!-- <h2>LMS - Attempt Quiz</h2> -->
+        <div>
+            <nav>
+                <a href="index.html">Homepage</a>
+                <a href="course_view.html">Courses</a>
+            </nav>
+        </div>
+        <br>
+        <br>
+        <main>
+            <img src="images/banner.jpg" id="banner" width="100%">
+            <section id="coursequiz">
+                <h2 id="coursename">Course Name: Web Development</h2>
+                <h2 id="coursecode">Course Code: WD381</h2>
+                <p>Topic: HTML Basics</p>
+                <p>Deadline: 11:59 PM, February 10, 2025</p>
+                <p>Attempts Allowed: 1</p>
+            </section>
+        
+            <div id="timer">10:00</div>
+            <h3>Question 1</h3>
+            <p>What does HTML stand for?</p>
+            <form>
+                <section id="quizanswers">
+                    <input type="radio" id="radiobtn" name="choice">
+                    <label for="Hyper">Hyper Text Markup Language</label>
+                    <br>
+                    <input type="radio" id="radiobtn" name="choice">
+                    <label for="Home Tool Markup Language">Home Tool Markup Language</label>
+                    <br>
+                </section>
+                <br>
+                <input id="submit" type="button" value="Submit Answer">
+            </form>
+            <h3>Question 2</h3>
+            <p>Which of the following are HTML elements? (Select all that apply)</p>
+            <form>
+                <section id="quizanswers">
+                    <input type="checkbox" id="divSelect" name="div">
+                    <label for="div">&lt;div&gt;</label>
+                    <br>
+                    <input type="checkbox" id="spanSelect" name="span">
+                    <label for="span">&lt;span&gt;</label>
+                    <br>
+                </section>
+                <br>
+                <input id="submit" type="submit" value="Submit Answer">
+            </form>
+            <br>
+            <a href="leaderboard.html">
+                <button id="finish">Finish Quiz</button>
+            </a>
+        </main>
+        <br>
+        <footer>&copy;2025 LMS.All rights reserved</footer>
+        
+        <script>
+            // --- Timer ---
+            var timeLeft = 600;
+            var timerDiv = document.getElementById("timer");
+            var timerInterval = setInterval(function(){
+                var minutes = Math.floor(timeLeft / 60);
+                var seconds = timeLeft % 60;
+                timerDiv.textContent = (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+                if(timeLeft <= 0){
+                    clearInterval(timerInterval);
+                 
+                    window.location.href = "leaderboard.html";
+                }
+                timeLeft--;
+            }, 1000);
+            
+            // --- Finish Quiz---
+            document.getElementById("finish").addEventListener("click", function(e){
+                e.preventDefault(); // don't go to leaderboard.html yet until quiz is validatedl
+                clearInterval(timerInterval); // Stop the timer whenn quizz is done
+                
+                var score = 0;
+                
+            
+                var q1 = document.querySelector('input[name="choice"]:checked');
+                if(!q1){
+                    alert("Please answer Question 1.");
+                    return;
+                } else {
+          
+                    var q1Label = q1.nextElementSibling;
+                    if(q1Label && q1Label.textContent.trim() === "Hyper Text Markup Language"){
+                        score += 50;
+                    }
+                }
+                
+ 
+                var q2Div = document.getElementById("divSelect");
+                var q2Span = document.getElementById("spanSelect");
+                if(!q2Div.checked && !q2Span.checked){
+                    alert("Please answer Question 2 by selecting at least one option.");
+                    return;
+                } else {
+                    if(q2Div.checked){
+                        score += 25;
+                    }
+                    if(q2Span.checked){
+                        score += 25;
+                    }
+                }
+                
+  
+                var finalScoreDiv = document.getElementById("finalScore");
+                if(!finalScoreDiv){
+                    finalScoreDiv = document.createElement("div");
+                    finalScoreDiv.id = "finalScore";
+               
+                    var finishLink = document.querySelector('a[href="leaderboard.html"]');
+                    finishLink.parentNode.insertBefore(finalScoreDiv, finishLink.nextSibling);
+                }
+                finalScoreDiv.textContent = "Your final score is: " + score + " out of 100.";
+            });
+        </script>
+    </body>
+</html>

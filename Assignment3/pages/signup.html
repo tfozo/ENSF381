@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LMS - Signup</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <header>
+        <img src="images/logo.jpg" height="100" width="100">
+        <h1>LMS - Learning Management System</h1>
+        <!--  <h2>LMS Signup</h2> -->
+    </header>
+    <div>
+        <nav>
+            <a href="index.html">Homepage</a>
+        </nav>
+    </div>
+    <h2 id="loginh1">LMS Signup</h2>
+    <main id="login_main">
+        <form id="signupForm">
+            <div id="signup_div">
+                <label for="username">Username:</label><br>
+                <input type="text" id="username" name="username"><br><br>
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password"><br><br>
+                <label for="confirmPassword">Confirm Password:</label><br>
+                <input type="password" id="confirmPassword" name="confirmPassword"><br><br>
+                <label for="email">Email:</label><br>
+                <input type="text" id="email" name="email"><br><br>
+            </div>
+            <button type="submit" id="signupButton">Signup</button>
+        </form>
+        <!-- Dynamic message box for displaying error or success messages -->
+        <div id="signupMsg"></div>
+        <br>
+        <a href="login.html">Already have an account? Login here</a>
+    </main>
+    <br>
+    <footer>&copy;2025 LMS. All rights reserved</footer>
+    
+    <script>
+        // Signup Form Validation
+        document.getElementById("signupForm").addEventListener("submit", function(e){
+            e.preventDefault();
+            var signupMsg = document.getElementById("signupMsg");
+            signupMsg.style.display = "block";
+
+            var errors = [];
+            
+      
+            var username = document.getElementById("username").value.trim();
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+            var email = document.getElementById("email").value.trim();
+            
+   
+            var usernameRegex = /^[A-Za-z][A-Za-z0-9_-]{2,19}$/;
+            if (!usernameRegex.test(username)) {
+                errors.push("Invalid username (Reason: Must be 3-20 characters, start with a letter, and contain only letters, numbers, hyphens, or underscores.)");
+            }
+            
+      
+            var passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*()\-\_=+\[\]{}|;:'",.<>?\/`~])(?!.*\s).{8,}$/;
+            if (!passwordRegex.test(password)) {
+                errors.push("Invalid password (Reason: Must be at least 8 characters and include an uppercase letter, a lowercase letter, a number, and a special character, with no spaces.)");
+            }
+            
+    
+            if (password !== confirmPassword) {
+                errors.push("Passwords do not match");
+            }
+            
+  
+            var emailRegex = /^[^\s@]+@[^\s@]+\.(com|net|io)$/;
+            if (!emailRegex.test(email)) {
+                errors.push("Invalid email (Reason: Please enter a valid email address with domain ending in .com, .net, or .io.)");
+            }
+            
+            if (errors.length > 0) {
+         
+                signupMsg.innerHTML = errors.join("<br>");
+            } else {
+          
+                signupMsg.innerHTML = "Signup successful! Redirecting to login page...";
+                setTimeout(function(){
+                    window.location.href = "login.html";
+                }, 2000);
+            }
+        });
+    </script>
+</body>
+</html>

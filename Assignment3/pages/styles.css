@@ -1,0 +1,351 @@
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+
+header {
+    color: white;
+    background-color: #004080;
+    padding: 20px;
+    margin: 0; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+div nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #003366;
+    color: white;
+    padding: 10px;
+    margin: 0; 
+}
+
+
+div a {
+    text-decoration: none;
+    color: white;
+}
+
+
+div a:hover {
+    text-decoration: underline;
+}
+
+
+main {
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 20px;
+    margin: 0px; /*our instruction says
+    to make this 20px but the output pdf doesn't have that*/
+}
+
+/* the index.html ul */
+#about ul {
+    list-style-type: none;
+    display: inline-block;
+    padding-left: 0;
+
+}
+#about ul li::before {
+    content: "-"; 
+    margin-right: 10px; 
+}
+
+
+
+
+#login_div {
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    background-color: #d4d4d4;
+    padding: 30px;
+    box-shadow: 4px 4px 10px #e7e7e7;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+#username, #password, #confirmPassword, #email {
+    background-color: lightyellow;
+    padding: 10px;
+    border-radius: 5px;
+    border: 3px solid darkgrey;
+}
+
+
+
+#loginh1 {
+    color: #004080;
+    text-align: center;
+ }
+
+ #login_main button{
+    background-color: #008000;
+    color: white;
+    padding: 10px;
+}
+
+#login_main button:hover{
+    background-color: #006600;
+}
+
+ main a {
+    color: #004080;
+    text-decoration: none;
+ }
+
+
+ main a:hover {
+    text-decoration: underline;
+ }
+
+
+ main h2{
+    color: #004080;
+    text-align: center;
+ }
+
+
+ul {
+    display: inline-block;
+   
+}
+
+/*not sure if i must include this but on the output image we can see that
+there is a cool spacing between the list items*/
+
+li {
+    padding: 5px;
+    margin: 0;
+}
+
+
+footer {
+    background-color: #004080;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    margin: 0; 
+}
+
+/*the course view*/
+
+#courseviewMainId table {
+    width: 100%;
+    /* I set a maximum width for the table */
+    max-width: 800px;  
+    margin: 0 auto;  
+}
+
+select {
+    background-color: lightyellow;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.course {
+    background-color: #e6f2ff;
+    box-shadow: 5px 5px 5px 5px  #d6d6d6;
+    padding: 20px;
+    margin: 15px;
+    border-radius: 10px;
+    justify-content: center;
+}
+
+.course:hover {
+    background-color: #ffffff;
+}
+
+#acceptBtn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#acceptBtn:hover {
+    background-color: #265e28;
+}
+
+#declineBtn {
+    background-color: #D32F2F;
+    color: white;
+}
+
+#declineBtn:hover {
+    background-color: #821b1b;
+}
+
+#banner {
+    width: 100%;
+    height: 150px;
+    border-radius: 15px;
+}
+
+
+#coursequiz {
+    background-color: lightblue;
+    padding: 20px;
+    margin-left: 250px;
+    margin-right: 250px;
+    text-align: center;
+}
+
+#coursename, #coursecode {
+    font-weight: bold;
+
+}
+
+
+#quizanswers {
+
+    margin-left: 300px;
+    margin-right: 300px;
+    background-color: #cacaca;
+    text-align: left;
+    padding: 30px;
+
+  
+}
+
+
+#submit {
+    background-color: lightblue;
+    color: black;
+    padding:10px;
+}
+
+#submit:hover {
+    background-color: darkblue;
+    color: white;
+}
+
+#finish {
+    background-color: #D32F2F;
+    color: white;
+    padding:10px;
+}
+
+#finish:hover {
+    background-color: #821b1b;
+}
+
+#pendImg {
+margin:0px;
+padding: 0px;
+width: 375px;
+}
+
+
+
+/* leader board styling */
+
+#leaderboardMainId {
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    font-weight: bold;
+}
+
+#leaderboardMainId table {
+   
+    border-collapse: collapse;
+    width: 100%;
+
+    border: white solid 1px; 
+}
+
+#leaderboardMainId table tr:first-child th {
+    background-color: #4CAF50;
+    color: #fff;
+    text-align: center;
+
+}
+
+#leaderboardMainId table tr:nth-child(3) {
+    background-color: #FFD700;
+}
+
+
+#leaderboardMainId table tr:nth-child(4),
+tr:nth-child(5) {
+    background-color: #C0C0C0; 
+}
+
+
+#leaderboardMainId table tr:nth-child(6) {
+    background-color: #CD7F32; 
+}
+
+#leaderboardMainId table  tr:nth-child(7) {
+    background-color: #f9f9f9;
+}
+#leaderboardMainId table tr:nth-child(8) {
+    background-color: #e4e2e2;
+}
+
+
+#leaderboardMainId table th, td {
+    border: 2px solid white;
+    padding: 8px;
+    text-align: center;
+}
+
+
+#leaderboardMainId table td img {
+    border-radius: 50%;
+    border: black solid 1.5px;
+}
+
+/* attempt quiz styling */
+
+#timer {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+
+#finalScore {
+    font-size: 20px;
+    margin-top: 20px;
+    color: green;
+  }
+
+/* login page styling */
+
+#loginMsg {
+    border:1px solid #000;
+     padding:10px; 
+     margin-top:10px; 
+     display:none;
+}
+
+/* sign up page styling */
+
+
+#signupButton {
+    background-color: #4CAF50;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+#signupButton:hover {
+    background-color: #45A049;
+    opacity: 1.0;
+}
+
+#signupMsg {
+    border: 1px solid #000;
+    padding: 10px;
+    margin-top: 10px;
+    display: none;
+}
