@@ -1,5 +1,5 @@
 import React, { useState, createContext } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import AuthMessage from './AuthMessage';
@@ -10,7 +10,7 @@ const LoginForm = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [authStatus, setAuthStatus] = useState(null);
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -31,9 +31,9 @@ const LoginForm = () => {
         const user = users.find(user => user.username === username && user.email === password);
         if (user) {
           setAuthStatus({ type: 'success', message: 'Login successful! Redirecting...' });
-          // Redirect after 2 seconds
+          // Redirect after 2 seconds using useNavigate
           setTimeout(() => {
-            history.push('/courses');
+            navigate('/courses');
           }, 2000);
         } else {
           setAuthStatus({ type: 'error', message: 'Invalid username or password!' });

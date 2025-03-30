@@ -27,7 +27,7 @@ const MainSection = () => {
         <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
           {featuredCourses.map(course => (
             <div key={course.id} style={{ border: '1px solid #ccc', padding: '10px', width: '200px' }}>
-              <img src={course.image} alt={course.name} style={{ width: '100%' }} />
+              <img src={require(`../${course.image}`)}  alt={course.name} style={{ width: '100%' }} />
               <h3>{course.name}</h3>
               <p>{course.instructor}</p>
             </div>

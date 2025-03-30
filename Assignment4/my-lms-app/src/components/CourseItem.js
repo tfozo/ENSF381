@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+
 const CourseItem = ({ course, onEnroll }) => {
   const [showDescription, setShowDescription] = useState(false);
 
@@ -9,7 +10,7 @@ const CourseItem = ({ course, onEnroll }) => {
       onMouseEnter={() => setShowDescription(true)}
       onMouseLeave={() => setShowDescription(false)}
     >
-      <img src={course.image} alt={course.name} style={{ width: '100%' }} />
+      <img  src={require(`../${course.image}`)} alt={course.name} style={{ width: '100%' }} />
       <h3>{course.name}</h3>
       <p>{course.instructor}</p>
       {showDescription && <p>{course.description}</p>}
