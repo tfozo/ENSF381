@@ -14,7 +14,15 @@ const CourseItem = ({ course, onEnroll }) => {
       <h3>{course.name}</h3>
       <p>{course.instructor}</p>
       {showDescription && <p>{course.description}</p>}
-      <button onClick={() => onEnroll(course)}>Enroll Now</button>
+      <button
+  onClick={(e) => {
+    onEnroll(course);
+  }}
+>
+  Enroll Now
+</button>
+
+
     </div>
   );
 };
