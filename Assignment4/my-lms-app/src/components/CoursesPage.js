@@ -43,13 +43,14 @@ const CoursesPage = () => {
   return (
     <div className="courses-page">
       <Header />
-      <div className="content" style={{ display: 'flex', justifyContent: 'space-around' }}>
+      <div className="content" style={{ display: 'block', textAlign: 'center' }}>
         <CourseCatalog onEnroll={handleEnroll} />
         <EnrollmentList enrolledCourses={enrolledCourses} onDrop={handleDrop} />
       </div>
       <Footer />
     </div>
   );
+  
 };
 
 export default CoursesPage;

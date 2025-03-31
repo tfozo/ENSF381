@@ -24,14 +24,12 @@ const LoginFormMain = () => {
       return;
     }
 
- 
     fetch('https://jsonplaceholder.typicode.com/users')
       .then(response => response.json())
       .then(users => {
         const user = users.find(user => user.username === username && user.email === password);
         if (user) {
           setAuthStatus({ type: 'success', message: 'Login successful! Redirecting...' });
-          // Redirect after 2 seconds using useNavigate
           setTimeout(() => {
             navigate('/courses');
           }, 2000);
@@ -46,27 +44,29 @@ const LoginFormMain = () => {
 
   return (
     <AuthContext.Provider value={{ authStatus }}>
-      <div style={{ padding: '20px', textAlign: 'center' }}>
+      <div className="loginContainer">
         <h2>LMS Login</h2>
-        <form onSubmit={handleSubmit} style={{ display: 'inline-block', textAlign: 'left' }}>
-          <div>
-            <label htmlFor="username">Username:</label><br/>
+        <form onSubmit={handleSubmit} className="loginForm">
+          <div className="formGroup">
+            <label htmlFor="username">Username:</label>
             <input 
               type="text" 
               id="username" 
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-            /><br/><br/>
-            <label htmlFor="password">Password:</label><br/>
+            />
+          </div>
+          <div className="formGroup">
+            <label htmlFor="password">Password:</label>
             <input 
               type="password" 
               id="password" 
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-            /><br/><br/>
+            />
           </div>
-          <button type="submit">Login</button><br/><br/>
-          <a href="#">Forgot Password?</a>
+          <button type="submit" className="loginButton">Login</button>
+          <a href="#" className="forgotPassword">Forgot Password?</a>
         </form>
         <AuthMessage />
       </div>

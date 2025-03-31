@@ -1,19 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../images/logo.jpg';
+import '../App.css';
+
 
 const Header = () => {
   return (
-    <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '20px', backgroundColor: '#004080', color: 'white' }}>
-      <div>
-        <img src={logo} alt="LMS Logo" height="100" width="100" />
+    <div>
+      <header className="pageHeader">
+        <img src={logo} alt="LMS Logo" style={{ width: '100px', height: '100px' }} />
+        <h1>LMS - Learning Management System</h1>
+      </header>
+      <div className="navbar">
+        <Link to="/" className="headerLink">Home</Link>
+        <Link to="/courses" className="headerLink">Courses</Link>
+        <Link to="/login" className="headerLink">Login</Link>
       </div>
-      <nav style={{ display: 'flex', gap: '20px' }}>
-        <Link to="/" style={{ color: 'white', textDecoration: 'none' }}>Home</Link>
-        <Link to="/courses" style={{ color: 'white', textDecoration: 'none' }}>Courses</Link>
-        <Link to="/login" style={{ color: 'white', textDecoration: 'none' }}>Login</Link>
-      </nav>
-    </header>
+    </div>
   );
 };
 
