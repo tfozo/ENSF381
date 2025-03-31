@@ -9,7 +9,7 @@ const EnrollmentList = ({ enrolledCourses, onDrop }) => {
     const total = Object.values(enrolledCourses).reduce((sum, item) => sum + (item.course.creditHours * item.count), 0);
     setTotalCredits(total);
 
-    // Save enrollment data to localStorage
+ 
     localStorage.setItem('enrolledCourses', JSON.stringify(enrolledCourses));
   }, [enrolledCourses]);
 

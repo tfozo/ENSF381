@@ -21,6 +21,7 @@ const MainSection = () => {
       <section id="about">
         <h2>About LMS</h2>
         <p>The Learning Management System (LMS) helps students and instructors manage courses, quizzes, and track performance efficiently.</p>
+
       </section>
       <section id="featured-courses">
         <h2>Featured Courses</h2>

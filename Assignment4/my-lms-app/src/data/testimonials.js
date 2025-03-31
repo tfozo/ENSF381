@@ -20,8 +20,9 @@ const testimonials = [
     {
       studentName: "David Lee",
       courseName: "Backend Development with Node.js",
-      review: "Highly practical and well-organized course.",
-      rating: 5
+      review: "Extremly hard to comprehend, but worth it.",
+      rating: 3
+
     }
   ];
   

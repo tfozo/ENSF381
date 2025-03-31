@@ -6,7 +6,7 @@ import AuthMessage from './AuthMessage';
 
 export const AuthContext = createContext();
 
-const LoginForm = () => {
+const LoginFormMain = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [authStatus, setAuthStatus] = useState(null);
@@ -24,7 +24,7 @@ const LoginForm = () => {
       return;
     }
 
-    // API Integration: Fetch user data
+ 
     fetch('https://jsonplaceholder.typicode.com/users')
       .then(response => response.json())
       .then(users => {
@@ -46,35 +46,41 @@ const LoginForm = () => {
 
   return (
     <AuthContext.Provider value={{ authStatus }}>
-      <div>
-        <Header />
-        <main style={{ padding: '20px', textAlign: 'center' }}>
-          <h2>LMS Login</h2>
-          <form onSubmit={handleSubmit} style={{ display: 'inline-block', textAlign: 'left' }}>
-            <div>
-              <label htmlFor="username">Username:</label><br/>
-              <input 
-                type="text" 
-                id="username" 
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-              /><br/><br/>
-              <label htmlFor="password">Password:</label><br/>
-              <input 
-                type="password" 
-                id="password" 
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              /><br/><br/>
-            </div>
-            <button type="submit">Login</button><br/><br/>
-            <a href="#">Forgot Password?</a>
-          </form>
-          <AuthMessage />
-        </main>
-        <Footer />
+      <div style={{ padding: '20px', textAlign: 'center' }}>
+        <h2>LMS Login</h2>
+        <form onSubmit={handleSubmit} style={{ display: 'inline-block', textAlign: 'left' }}>
+          <div>
+            <label htmlFor="username">Username:</label><br/>
+            <input 
+              type="text" 
+              id="username" 
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            /><br/><br/>
+            <label htmlFor="password">Password:</label><br/>
+            <input 
+              type="password" 
+              id="password" 
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            /><br/><br/>
+          </div>
+          <button type="submit">Login</button><br/><br/>
+          <a href="#">Forgot Password?</a>
+        </form>
+        <AuthMessage />
       </div>
     </AuthContext.Provider>
+  );
+};
+
+const LoginForm = () => {
+  return (
+    <div>
+      <Header />
+      <LoginFormMain />
+      <Footer />
+    </div>
   );
 };
 
